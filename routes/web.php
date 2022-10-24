@@ -10,4 +10,6 @@ Route::get('/', function(){
 
 Route::get('user/{user?}', [UserController::class, 'show'])->name('user');
 
+Route::get('users', [UserController::class, 'index'])->name('index');
+
 
