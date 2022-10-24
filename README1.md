@@ -1,3 +1,70 @@
+ROTA
+<?php
+
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController; 
+
+Route::get('/', function(){
+    return view('welcome');
+});
+
+
+Route::get('user/{user?}', [UserController::class, 'show'])->name('user');
+
+CONTROLLER
+<?php
+
+namespace App\Http\Controllers;
+
+use App\Models\User;
+use Illuminate\Http\Request;
+
+class UserController extends Controller
+{
+    public function show(User $user){
+        
+        return view('user', [
+            'name' => 'Paulo',
+            'user' => $user
+        
+        ]);       
+    }
+}
+/**************** */
+BLADE.PHP
+<h1>Passando variável direto: {{ $name }} </h1>
+<hr>
+<h1>Listando o Retorno da Model User</h1>
+<h2>{{ $user }} </h2>
+<p>Selecionando o nome fica: {{ $user->name }} </p>
+<p>Selecionando o Email fica: {{ $user->email }} </p>
+
+DATABASE SEED
+class DatabaseSeeder extends Seeder
+{
+    /**
+     * Seed the application's database.
+     *
+     * @return void
+     */
+    public function run()
+    {
+        \App\Models\User::factory(10)->create();
+
+        //  \App\Models\User::factory()->create([
+        //      'name' => 'Test User',
+        //      'email' => 'test@example.com',
+        //  ]);
+    }
+}
+
+MODEL
+User.php
+
+
+
+/***************************** */
+
 <!--  INÍCIO:
 
 1 instalar o docker
