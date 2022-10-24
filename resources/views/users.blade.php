@@ -1,6 +1,12 @@
+@extends('layouts.default')
 
-@foreach ($users as $user )
+@section('content')
 
-{{ $user->id}} - {{ $user->name}} <br><hr>
 
-@endforeach
+    @foreach ($users as $user )
+
+    {{ $user->id}} - {{ $user->name}} <br><hr>
+
+    @endforeach
+
+@endsection
