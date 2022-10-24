@@ -23,8 +23,8 @@
         <body class="antialiased">
                 <div class="container">
                     <h1>Meu Layout do Site</h1>
-                    <a href="{{ url('/users') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Usuários</a>
-                    <a href="{{ url('/user') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Usuário ID</a>
+                    <a href="{{ route('index') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Usuários</a>
+                    <a href="{{ route('user') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Usuário ID</a>
 
                     <hr>
 
